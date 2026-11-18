@@ -152,35 +152,24 @@ export default function Hero() {
       {/* Center Robot Hero Container */}
       <div
         ref={robot}
-        className="absolute inset-x-0 bottom-[12%] top-[14%] z-10 flex flex-col items-center justify-end pointer-events-none"
+        className="absolute inset-x-0 bottom-[10%] top-[12%] z-10 flex flex-col items-center justify-end pointer-events-none"
       >
         <div className="relative flex flex-col items-center justify-end h-full w-full max-w-[1100px]">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/images/hero-robot.png"
+            src="/images/hero-robot.png?v=3"
             alt="Nuro PR-50 autonomous patrol robot"
-            className="relative z-10 h-auto max-h-[82%] w-auto max-w-[92%] object-contain"
+            className="relative z-10 h-auto max-h-[84%] w-auto max-w-[92%] object-contain"
           />
 
-          {/* Realistic Multi-Layer Automotive Ground Shadow */}
-          <div className="relative -mt-6 sm:-mt-8 md:-mt-10 w-[78%] max-w-[820px] h-14 pointer-events-none">
-            {/* 1. Deep Contact Shadows under Tires */}
-            {/* Left Front Tire */}
-            <div className="absolute left-[18%] bottom-3 w-32 h-6 bg-black/85 rounded-full blur-[4px]" />
-            {/* Center-Right Front Tire */}
-            <div className="absolute left-[44%] bottom-2 w-32 h-6 bg-black/85 rounded-full blur-[4px]" />
-            {/* Far Right Tire */}
-            <div className="absolute right-[14%] bottom-4 w-32 h-6 bg-black/75 rounded-full blur-[5px]" />
-            {/* Far Left Rear Tire */}
-            <div className="absolute left-[6%] bottom-5 w-24 h-5 bg-black/60 rounded-full blur-[5px]" />
-
-            {/* 2. Undercarriage Ambient Occlusion (Dark core under chassis) */}
-            <div className="absolute left-1/2 -translate-x-1/2 bottom-2 w-[70%] h-8 bg-black/75 rounded-full blur-[10px]" />
-
-            {/* 3. Soft Diffused Ambient Ground Shadow */}
-            <div className="absolute left-1/2 -translate-x-1/2 -bottom-2 w-[100%] h-14 bg-black/35 rounded-full blur-2xl" />
-            <div className="absolute left-1/2 -translate-x-1/2 -bottom-4 w-[115%] h-20 bg-black/20 rounded-full blur-3xl" />
-          </div>
+          {/* Authentic Soft Studio Floor Shadow */}
+          <div
+            className="relative -mt-4 sm:-mt-6 w-[70%] max-w-[680px] h-8 pointer-events-none"
+            style={{
+              background: "radial-gradient(ellipse at 50% 50%, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.14) 45%, rgba(0, 0, 0, 0) 75%)",
+              filter: "blur(8px)",
+            }}
+          />
         </div>
       </div>
 

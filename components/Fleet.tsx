@@ -72,7 +72,7 @@ export default function Fleet() {
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src={FLEET[prevIndex].img}
+            src={`${FLEET[prevIndex].img}?v=3`}
             alt={FLEET[prevIndex].name}
             className="w-full object-contain pointer-events-none"
           />
@@ -84,21 +84,19 @@ export default function Fleet() {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               key={FLEET[index].name}
-              src={FLEET[index].img}
+              src={`${FLEET[index].img}?v=3`}
               alt={FLEET[index].name}
               className="relative z-10 w-full object-contain animate-in fade-in zoom-in-95 duration-500"
             />
 
-            {/* Realistic Dark Studio Ground Shadow */}
-            <div className="relative -mt-6 sm:-mt-8 md:-mt-10 w-[85%] max-w-[580px] h-12 pointer-events-none">
-              {/* Deep tire contact patches */}
-              <div className="absolute left-[12%] bottom-2 w-28 h-5 bg-black rounded-full blur-[3px]" />
-              <div className="absolute right-[12%] bottom-2 w-28 h-5 bg-black rounded-full blur-[3px]" />
-              {/* Central undercarriage ambient occlusion */}
-              <div className="absolute left-1/2 -translate-x-1/2 bottom-1 w-[80%] h-8 bg-black rounded-full blur-[8px]" />
-              {/* Soft ambient ground spread */}
-              <div className="absolute left-1/2 -translate-x-1/2 -bottom-2 w-[110%] h-14 bg-black/60 rounded-full blur-2xl" />
-            </div>
+            {/* Soft Studio Ground Shadow */}
+            <div
+              className="relative -mt-4 sm:-mt-6 w-[75%] max-w-[520px] h-8 pointer-events-none"
+              style={{
+                background: "radial-gradient(ellipse at 50% 50%, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.25) 45%, rgba(0, 0, 0, 0) 75%)",
+                filter: "blur(10px)",
+              }}
+            />
           </div>
         </div>
 
@@ -109,7 +107,7 @@ export default function Fleet() {
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src={FLEET[nextIndex].img}
+            src={`${FLEET[nextIndex].img}?v=3`}
             alt={FLEET[nextIndex].name}
             className="w-full object-contain pointer-events-none"
           />

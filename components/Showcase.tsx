@@ -50,7 +50,7 @@ export default function Showcase() {
 
       <h2 className="sr-only">Nuro PR-50 Front Showcase</h2>
 
-      {/* Center robot front view with realistic ground shadow */}
+      {/* Center robot front view with natural ground shadow */}
       <div
         ref={robot}
         className="relative z-10 flex flex-col items-center justify-end h-[78%] w-auto max-w-[92%] pointer-events-none"
@@ -58,23 +58,19 @@ export default function Showcase() {
         <div className="relative flex flex-col items-center justify-end h-full">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/images/showcase-robot.png"
+            src="/images/showcase-robot.png?v=3"
             alt="Front view of the Nuro PR-50 autonomous robot vehicle"
             className="relative z-10 h-full w-auto max-w-none object-contain"
           />
 
-          {/* Symmetrical Automotive Ground Shadow for Front View */}
-          <div className="relative -mt-6 sm:-mt-8 md:-mt-10 w-[72%] max-w-[560px] h-12 pointer-events-none">
-            {/* Left Front Tire Contact Shadow */}
-            <div className="absolute left-[8%] bottom-2 w-28 h-5 bg-black/90 rounded-full blur-[3px]" />
-            {/* Right Front Tire Contact Shadow */}
-            <div className="absolute right-[8%] bottom-2 w-28 h-5 bg-black/90 rounded-full blur-[3px]" />
-            {/* Central Undercarriage Ambient Occlusion */}
-            <div className="absolute left-1/2 -translate-x-1/2 bottom-1 w-[80%] h-8 bg-black/75 rounded-full blur-[8px]" />
-            {/* Soft Ambient Ground Spread */}
-            <div className="absolute left-1/2 -translate-x-1/2 -bottom-2 w-[110%] h-12 bg-black/30 rounded-full blur-2xl" />
-            <div className="absolute left-1/2 -translate-x-1/2 -bottom-4 w-[130%] h-16 bg-black/15 rounded-full blur-3xl" />
-          </div>
+          {/* Soft Natural Ground Shadow */}
+          <div
+            className="relative -mt-4 sm:-mt-6 w-[70%] max-w-[480px] h-8 pointer-events-none"
+            style={{
+              background: "radial-gradient(ellipse at 50% 50%, rgba(0, 0, 0, 0.32) 0%, rgba(0, 0, 0, 0.12) 45%, rgba(0, 0, 0, 0) 75%)",
+              filter: "blur(8px)",
+            }}
+          />
         </div>
       </div>
     </section>
