@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import gsap from "gsap";
+import { gsap } from "@/lib/gsap";
 
 // Positions are % of the 1920x1451 Figma frame.
 const HOTSPOTS = [
@@ -63,14 +63,14 @@ export default function Hero() {
 
   return (
     <section ref={root} id="home" className="relative isolate h-[max(100svh,720px)] min-h-[560px] overflow-hidden bg-stage">
-      <a data-logo href="#home" aria-label="Nuro home" className="absolute left-1/2 top-6 z-30 -translate-x-1/2 text-3xl font-semibold tracking-tight text-white md:top-8 md:text-5xl">
+      <a data-logo href="#home" aria-label="Nuro home" className="absolute left-1/2 top-6 z-30 -translate-x-1/2 font-display text-3xl font-semibold tracking-tight text-white md:top-8 md:text-5xl">
         nuro
       </a>
 
       <h1
         ref={word}
         aria-label="Autonomy"
-        className="pointer-events-none absolute inset-x-0 top-[9%] z-0 flex select-none justify-center text-[clamp(64px,19vw,360px)] font-semibold leading-[0.9] tracking-[-0.04em]"
+        className="pointer-events-none absolute inset-x-0 top-[9%] z-0 flex select-none justify-center text-[clamp(64px,19vw,360px)] font-bold leading-[0.9] tracking-[-0.04em]"
         style={{
           backgroundImage: "linear-gradient(180deg,#fff 18%,rgba(255,255,255,0) 82%)",
           WebkitBackgroundClip: "text",

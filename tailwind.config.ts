@@ -10,7 +10,10 @@ const config: Config = {
         bone: "#FFFFFF",
         fleet: "#222222",   // fleet section
       },
-      fontFamily: { sans: ["var(--font-inter)", "system-ui", "sans-serif"] },
+      fontFamily: {
+        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
+        display: ["Stack Sans Notch", "var(--font-inter)", "system-ui", "sans-serif"],
+      },
       transitionTimingFunction: { nuro: "cubic-bezier(0.22, 1, 0.36, 1)" },
     },
   },
