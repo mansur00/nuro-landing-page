@@ -78,15 +78,28 @@ export default function Fleet() {
           />
         </div>
 
-        {/* Center Active Vehicle */}
-        <div className="relative z-10 w-[70%] sm:w-[50%] max-w-[720px] transition-transform duration-500">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            key={FLEET[index].name}
-            src={FLEET[index].img}
-            alt={FLEET[index].name}
-            className="w-full object-contain drop-shadow-[0_24px_48px_rgba(0,0,0,0.6)] animate-in fade-in zoom-in-95 duration-500"
-          />
+        {/* Center Active Vehicle with Custom Ground Shadow */}
+        <div className="relative z-10 w-[70%] sm:w-[50%] max-w-[720px] flex flex-col items-center justify-center transition-transform duration-500">
+          <div className="relative w-full flex flex-col items-center">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              key={FLEET[index].name}
+              src={FLEET[index].img}
+              alt={FLEET[index].name}
+              className="relative z-10 w-full object-contain animate-in fade-in zoom-in-95 duration-500"
+            />
+
+            {/* Realistic Dark Studio Ground Shadow */}
+            <div className="relative -mt-6 sm:-mt-8 md:-mt-10 w-[85%] max-w-[580px] h-12 pointer-events-none">
+              {/* Deep tire contact patches */}
+              <div className="absolute left-[12%] bottom-2 w-28 h-5 bg-black rounded-full blur-[3px]" />
+              <div className="absolute right-[12%] bottom-2 w-28 h-5 bg-black rounded-full blur-[3px]" />
+              {/* Central undercarriage ambient occlusion */}
+              <div className="absolute left-1/2 -translate-x-1/2 bottom-1 w-[80%] h-8 bg-black rounded-full blur-[8px]" />
+              {/* Soft ambient ground spread */}
+              <div className="absolute left-1/2 -translate-x-1/2 -bottom-2 w-[110%] h-14 bg-black/60 rounded-full blur-2xl" />
+            </div>
+          </div>
         </div>
 
         {/* Right Dimmed Flanking Vehicle */}

@@ -51,17 +51,31 @@ export default function Cta() {
           </a>
         </div>
 
-        {/* Right Robot Image */}
+        {/* Right Robot Image with Custom Ground Shadow */}
         <div
           ref={botRef}
-          className="relative flex items-center justify-center md:justify-end h-full w-full pointer-events-none"
+          className="relative flex flex-col items-center justify-center md:items-end h-full w-full pointer-events-none"
         >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/images/cta-robot.png"
-            alt="Nuro autonomous vehicle ready for integration"
-            className="w-full max-w-[460px] md:max-w-[540px] object-contain drop-shadow-[0_20px_35px_rgba(0,0,0,0.14)]"
-          />
+          <div className="relative w-full max-w-[460px] md:max-w-[520px] flex flex-col items-center md:items-end">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/cta-robot.png"
+              alt="Nuro autonomous vehicle ready for integration"
+              className="relative z-10 w-full object-contain"
+            />
+
+            {/* Custom Automotive Ground Shadow */}
+            <div className="relative -mt-6 sm:-mt-8 md:-mt-10 w-[85%] h-12 pointer-events-none">
+              {/* Tires Contact */}
+              <div className="absolute left-[16%] bottom-2 w-28 h-5 bg-black/85 rounded-full blur-[3px]" />
+              <div className="absolute right-[16%] bottom-2 w-28 h-5 bg-black/85 rounded-full blur-[3px]" />
+              {/* Undercarriage Ambient Occlusion */}
+              <div className="absolute left-1/2 -translate-x-1/2 bottom-1 w-[80%] h-8 bg-black/75 rounded-full blur-[8px]" />
+              {/* Diffused Floor Shadow */}
+              <div className="absolute left-1/2 -translate-x-1/2 -bottom-2 w-[110%] h-12 bg-black/25 rounded-full blur-xl" />
+              <div className="absolute left-1/2 -translate-x-1/2 -bottom-4 w-[125%] h-16 bg-black/15 rounded-full blur-2xl" />
+            </div>
+          </div>
         </div>
       </div>
     </section>

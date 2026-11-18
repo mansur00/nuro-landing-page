@@ -7,10 +7,8 @@ const HOTSPOTS = [
   {
     id: "car",
     label: "Police Robotic Car",
-    // Position of the badge (% from top-left)
     badgeX: 23,
     badgeY: 38,
-    // Target dot on the vehicle (% from top-left)
     targetX: 32,
     targetY: 42,
     detail: "Purpose-built patrol platform for city streets.",
@@ -151,20 +149,39 @@ export default function Hero() {
         ))}
       </h1>
 
-      {/* Center Robot Hero Image */}
+      {/* Center Robot Hero Container */}
       <div
         ref={robot}
-        className="absolute inset-x-0 bottom-[10%] top-[12%] z-10 flex items-center justify-center pointer-events-none"
+        className="absolute inset-x-0 bottom-[12%] top-[14%] z-10 flex flex-col items-center justify-end pointer-events-none"
       >
-        {/* Soft ground shadow */}
-        <div className="absolute bottom-[2%] left-1/2 -translate-x-1/2 w-[72%] max-w-[850px] h-20 bg-black/25 blur-3xl rounded-full" />
+        <div className="relative flex flex-col items-center justify-end h-full w-full max-w-[1100px]">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/images/hero-robot.png"
+            alt="Nuro PR-50 autonomous patrol robot"
+            className="relative z-10 h-auto max-h-[82%] w-auto max-w-[92%] object-contain"
+          />
 
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="/images/hero-robot.png"
-          alt="Nuro PR-50 autonomous patrol robot"
-          className="relative z-10 h-auto max-h-[82%] w-auto max-w-[92%] object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.18)]"
-        />
+          {/* Realistic Multi-Layer Automotive Ground Shadow */}
+          <div className="relative -mt-6 sm:-mt-8 md:-mt-10 w-[78%] max-w-[820px] h-14 pointer-events-none">
+            {/* 1. Deep Contact Shadows under Tires */}
+            {/* Left Front Tire */}
+            <div className="absolute left-[18%] bottom-3 w-32 h-6 bg-black/85 rounded-full blur-[4px]" />
+            {/* Center-Right Front Tire */}
+            <div className="absolute left-[44%] bottom-2 w-32 h-6 bg-black/85 rounded-full blur-[4px]" />
+            {/* Far Right Tire */}
+            <div className="absolute right-[14%] bottom-4 w-32 h-6 bg-black/75 rounded-full blur-[5px]" />
+            {/* Far Left Rear Tire */}
+            <div className="absolute left-[6%] bottom-5 w-24 h-5 bg-black/60 rounded-full blur-[5px]" />
+
+            {/* 2. Undercarriage Ambient Occlusion (Dark core under chassis) */}
+            <div className="absolute left-1/2 -translate-x-1/2 bottom-2 w-[70%] h-8 bg-black/75 rounded-full blur-[10px]" />
+
+            {/* 3. Soft Diffused Ambient Ground Shadow */}
+            <div className="absolute left-1/2 -translate-x-1/2 -bottom-2 w-[100%] h-14 bg-black/35 rounded-full blur-2xl" />
+            <div className="absolute left-1/2 -translate-x-1/2 -bottom-4 w-[115%] h-20 bg-black/20 rounded-full blur-3xl" />
+          </div>
+        </div>
       </div>
 
       {/* Hotspots & Leader Lines (Desktop / Tablet) */}
@@ -174,7 +191,6 @@ export default function Hero() {
             const isHovered = active === h.id;
             return (
               <g key={`line-${h.id}`}>
-                {/* Pointer line */}
                 <line
                   x1={`${h.badgeX}%`}
                   y1={`${h.badgeY}%`}
@@ -184,7 +200,6 @@ export default function Hero() {
                   strokeWidth="1.2"
                   strokeDasharray={isHovered ? "none" : "2 2"}
                 />
-                {/* Dot on vehicle */}
                 <circle
                   cx={`${h.targetX}%`}
                   cy={`${h.targetY}%`}
@@ -220,7 +235,6 @@ export default function Hero() {
                   </span>
                 </div>
 
-                {/* Popover detail tooltip */}
                 <div
                   className={`absolute left-1/2 -translate-x-1/2 top-full mt-2 w-52 rounded-xl bg-white/95 p-3 text-left text-[11px] leading-relaxed text-[#1B1B1F]/80 shadow-xl border border-black/5 backdrop-blur-md pointer-events-none transition-all duration-200 ${
                     isHovered ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-1"
